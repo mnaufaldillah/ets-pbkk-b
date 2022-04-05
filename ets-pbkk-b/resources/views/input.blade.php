@@ -26,9 +26,11 @@
                                     <div class="form-group">
                                         <label for="pasien">Nama Pasien</label>
                                         <input class="form-control" type="text" name="pasien" value="{{ old('pasien') }}" class="@error('pasien') is-invalid @enderror">
-                                        @foreach ($pasiens as $pasien)
-                                            <option value="{{ $pasien->name }}">{{ $pasien->name }}</option>
-                                        @endforeach
+                                        <select class="form-control" name="pasien" value="{{ old('pasien') }}" id="pasien">
+                                            @foreach ($pasiens as $pasien)
+                                                <option value="{{ $pasien->name }}">{{ $pasien->name }}</option>
+                                            @endforeach
+                                        </select>
                                         @error('pasien')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -36,9 +38,11 @@
                                     <div class="form-group">
                                         <label for="dokter">Nama Dokter</label>
                                         <input class="form-control" type="text" name="dokter" value="{{ old('dokter') }}" class="@error('dokter') is-invalid @enderror">
-                                        @foreach ($dokters as $dokter)
-                                            <option value="{{ $dokter->name }}">{{ $dokter->name }}</option>
-                                        @endforeach
+                                        <select class="form-control" name="pasien" value="{{ old('pasien') }}" id="pasien">
+                                            @foreach ($dokters as $dokter)
+                                                <option value="{{ $dokter->name }}">{{ $dokter->name }}</option>
+                                            @endforeach
+                                        </select>
                                         @error('dokter')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
