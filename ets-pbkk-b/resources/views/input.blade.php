@@ -25,7 +25,6 @@
                                 {{ csrf_field() }}
                                     <div class="form-group">
                                         <label for="pasien">Nama Pasien</label>
-                                        <input class="form-control" type="text" name="pasien" value="{{ old('pasien') }}" class="@error('pasien') is-invalid @enderror">
                                         <select class="form-control" name="pasien" value="{{ old('pasien') }}" id="pasien">
                                             @foreach ($pasiens as $pasien)
                                                 <option value="{{ $pasien->name }}">{{ $pasien->name }}</option>
@@ -37,8 +36,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="dokter">Nama Dokter</label>
-                                        <input class="form-control" type="text" name="dokter" value="{{ old('dokter') }}" class="@error('dokter') is-invalid @enderror">
-                                        <select class="form-control" name="pasien" value="{{ old('pasien') }}" id="pasien">
+                                        <select class="form-control" name="dokter" value="{{ old('dokter') }}" id="dokter">
                                             @foreach ($dokters as $dokter)
                                                 <option value="{{ $dokter->name }}">{{ $dokter->name }}</option>
                                             @endforeach
